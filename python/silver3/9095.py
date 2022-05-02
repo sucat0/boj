@@ -1,8 +1,8 @@
-dplist = {1:1, 2:2, 3:4, 4:7}
+dpdict = {1:1, 2:2, 3:4, 4:7}
 
 def splitdp(x):
-    if x in dplist:
-        return dplist[x]
+    if x in dpdict:
+        return dpdict[x]
     return splitdp(x-1) + splitdp(x-2) + splitdp(x-3)
 
 
