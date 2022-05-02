@@ -6,7 +6,7 @@ for _ in range(n):
 
 timelist.sort(key=lambda x: (x[1], x[1]-x[0]))
 
-endtime_buff = -1
+endtime_buff = 0
 count = 0
 for starttime, endtime in timelist:
     if starttime >= endtime_buff:
