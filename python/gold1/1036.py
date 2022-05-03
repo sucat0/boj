@@ -47,7 +47,7 @@ def main():
         dec_sum += bit * count
 
     if dec_sum == 0:
-        result = '0'
+        result = '0'  # 망할 반례;;;;;;;;;;;;
     else:
         result = Converter.conv_to_base36(dec_sum)
     print(result)
