@@ -1,13 +1,21 @@
 from sys import stdin
 
-class Hashtable:
-    def __init__(self, min_index:int, max_index:int) -> None:
-        self.hash_table = [0 for _ in range(min_index-max_index)]
+n, m = map(int, stdin.readline().split())
 
-    def add_data(self, value:str) -> None:
-        
+name_dict = {}
+index_dict = {}
+for index in range(1, n+1):
+    name = stdin.readline().strip()
+    name_dict[name] = index
+    index_dict[index] = name
 
+for _ in range(m):
+    question = stdin.readline().strip()
+    is_int = question.isdigit()
 
-n, m = stdin.readline()
+    if is_int:
+        question = int(question)
+        print(index_dict[question])
 
-for 
+    else:
+        print(name_dict[question])
