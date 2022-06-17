@@ -3,6 +3,7 @@ from sys import stdin
 
 class Graph:
     def __init__(self, connections, node_num):
+        self.node_num = node_num
         self.graph: list[list[int]] = [[] for _ in range(node_num+1)]
         self.parents = [0] * (node_num+1)
 
@@ -11,14 +12,14 @@ class Graph:
             self.graph[node_two].append(node_one)
 
     def find_parents(self, start_node):
-        visited = []
+        visited = [False] * (self.node_num+1)
         queue = [start_node]
 
         while queue:
             node = queue.pop()
 
-            if node not in visited:
-                visited.append(node)
+            if not visited[node]:
+                visited[node] = True
 
                 connected_nodes = self.graph[node]
                 for connected_node in connected_nodes:
