@@ -269,3 +269,6 @@ dkms.conf
 
 #test code
 test.*
+
+
+.idea
