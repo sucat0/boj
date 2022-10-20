@@ -3,6 +3,9 @@ using namespace std;
 
 
 int main(void){
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
     queue<tuple<int, int, int>> bfs_queue;
     int dir_x[4] = {1, 0, -1, 0};
     int dir_y[4] = {0, 1, 0, -1};
