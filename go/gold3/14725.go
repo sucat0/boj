@@ -14,7 +14,6 @@ var (
 
 type trieNode struct {
 	child map[string]*trieNode
-	isEnd bool
 }
 
 type trie struct {
@@ -39,8 +38,6 @@ func (t *trie) insert(foods []string) {
 
 		node = node.child[food]
 	}
-
-	node.isEnd = true
 }
 
 func (t *trie) print(node *trieNode, depth int) {
@@ -75,9 +72,10 @@ func byteToInt(b []byte) int {
 func main() {
 	defer writer.Flush()
 
-	nByte, _, _ := reader.ReadLine()
 	trie := newTrie()
-	for i := 0; i < byteToInt(nByte); i++ {
+	nByte, _, _ := reader.ReadLine()
+	n := byteToInt(nByte)
+	for i := 0; i < n; i++ {
 		line, _, _ := reader.ReadLine()
 		lines := strings.Split(string(line), " ")[1:]
 		trie.insert(lines)
